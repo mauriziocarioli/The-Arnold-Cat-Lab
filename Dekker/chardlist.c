@@ -11,22 +11,21 @@
 
 int period, facs[MAXFACS], qchars[MAXPERIOD];
 
-	main ()
-{	int rad, dis, nfacs, i; char signtoken[] = "-o+";
-	printf ("\n%s\n", " discriminant      quadratic character");
-	for (rad = -MAXDIS; rad <= MAXDIS; rad++)
-	{	disfactors (rad, &dis, &nfacs, facs);
-		if  (rad == dis)  		 
-		{	quadchar (dis, nfacs, facs, &period, qchars);
-			printf ("\n%4d  ", dis);      
-			for (i = 0; i < abs(dis); i++) 
-				printf ("%c", signtoken[qchars[i] + 1]); 
-		}   
-	}   /*  end for rad  */
-	printf ("\n\n");
-} 
-	 
-
-
-
-
+main ()
+{	
+  int rad, dis, nfacs, i; 
+  char signtoken[] = "-o+";
+  printf ("\n%s\n", " discriminant      quadratic character");
+  for (rad = -MAXDIS; rad <= MAXDIS; rad++)
+    {	
+      disfactors (rad, &dis, &nfacs, facs);
+      if  (rad == dis)  		 
+	{	
+	  quadchar (dis, nfacs, facs, &period, qchars);
+	  printf ("\n%4d  ", dis);      
+	  for (i = 0; i < abs(dis); i++) 
+	    printf ("%c", signtoken[qchars[i] + 1]); 
+	}   
+    }   /*  end for rad  */
+  printf ("\n\n");
+}	 
