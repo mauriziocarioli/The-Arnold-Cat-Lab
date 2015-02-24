@@ -4,16 +4,11 @@
 /* The programs use subprograms from files quadchar.c and quadsiev.c         */
 /* and programming environment of Xcode system.                              */
 
-# define FONTSIZE     14          //  size of font for heading
 # define SMAX         89          //  (113)  maximum length character to draw	
 # define CMIN         30          //  length of heading text
 
-# define AMAX         47          //  (56) getallen x + y tau voor |x| <= AMAX	
-# define BMAX         47          //  (50)                 en voor |y| <= BMAX					
-# define DX            8          //  (6) spacing in x direction					
-# define DY            7          //  (5) spacing in y direction	
-# define H             3          //  half size of diamond 
-# define K             2          //  half height of diamond *** new
+# define AMAX         470         //  (56) getallen x + y tau voor |x| <= AMAX	
+# define BMAX         470         //  (50)                 en voor |y| <= BMAX					
 # define QNORM(x, y)  abs(x*(x+y)+y*y*(1-discriminant)/4) // norm of x + y tau
 # define peri         period/2+1  //  to draw chi over half double period +1
 
@@ -24,38 +19,40 @@
 Moreover, optional include to draw prime co-ideals.
 */
 
- int clas = 1, radicand[] = {-3,-7,-11,-19,-43,-67,-163, 5, 13, 17, 21, 29};
+int clas = 1, radicand[] = {-163,-67,-43,-19,-11,-7,-3,5,13,17,21,29,0};
+//int clas = 2, radicand[] = {-427,-403,-123,-115,-91,-51,-35,-15,65,85,0};
+//# include "quadideal2.c"
+//int clas = 3, radicand[] = {-907,-211,-139,-107,-83,-59,-31,-23,229,257,0};
+//# include "quadideal3.c"
 
-// int clas = 2, radicand[] = {-15,-35,-51,-91,-115,-123,-403,-427, 65, 85};
-// # include "quadideal2.c"
-
-// int clas = 3, radicand[] = {-23,-31,-59,-83,-107,-139,-211,-907, 229, 257};
-// # include "quadideal3.c"
-
-void drawdiamond(int x, int y) /* draws diamond of size 2H, center (x, y) */
-{	CGContextMoveToPoint(c, x-H, y-K); AddLineToPoint(x-H, y+K);
-	AddLineToPoint(x, y+2*K); AddLineToPoint(x+H, y+K);
-	AddLineToPoint(x+H, y-K);
-	AddLineToPoint(x, y-2*K); AddLineToPoint(x-H, y-K);
-	CGContextFillPath(c); 	
-}   /*  end drawdiamond  */
+void printnumber(int x, int y, char c)
+{
+  printf("\t\t\t{{%d,%d}, \"%c\"},\n",x,y,c);
+}
 
 void picture() /* draws picture of primes, units and option prime ideals */
-{   int xo, yo, a, b, norm, ab;	
-	xo = X00 + DX * AMAX; yo = yheight - Y00 - DY * BMAX;				 
-	for (b = -BMAX; b <= BMAX; b++) 
-		for (a = -(2*AMAX+b)/2; a <= (2*AMAX-b)/2; a++)  
-		{	norm = QNORM(a, b);	
-			if (norm >= maxnorm) FillBlack; // big black
-			else if (inset(norm, prinorm)) FillBlue; // primes
-			else if (norm == 1) FillRed; // units
-			testx  // optional extra test for co-ideals
-			else goto nodraw; 
-			ab = 2 * a + b;  //  to obtain staggered grid
-			//  draw diamond at given central coordinates:
-			drawdiamond(DX * ab / 2 + xo, DY * b + yo);			
-		nodraw: ;
-		}
+{   
+  int a, b, norm;
+  char c;
+  for (b = -BMAX; b <= BMAX; b++) 
+    for (a = -(2*AMAX+b)/2; a <= (2*AMAX-b)/2; a++)  
+      {	
+	norm = QNORM(a, b);	
+	if (norm < maxnorm)
+	  {	
+	    if (inset(norm, prinorm)) 
+	      IsPrime;
+	    else if (norm == 1) 
+	      IsUnit;
+	    testx  // optional extra test for co-ideals
+	    else goto nodraw; 
+	   // draw diamond at given central coordinates:
+	    printnumber(a,b,c);
+	  }
+      nodraw: ;
+      }
+  printf("\t\t}\n");
+  printf("\t},\n");
 }   /*  end picture  */
 
 

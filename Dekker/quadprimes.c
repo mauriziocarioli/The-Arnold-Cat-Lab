@@ -19,8 +19,8 @@ int rad, maxnorm, discriminant, period, nfacs, facs[MAXFACS],
 short int prinorm[SIZE];
 
 // Include one for discriminant = 0 or 1 modulo 4:
-# include "quadprim0mod4.c"
-//# include "quadprim10mod4.c"
+//# include "quadprim0mod4.c"
+# include "quadprim1mod4.c"
 
 void norma()  /* calculates maximum norm */
 {	
