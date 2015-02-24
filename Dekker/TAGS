@@ -1,0 +1,178 @@
+
+chardlist.c,185
+# define MAXPERIOD 5,241
+# define MAXDIS 6,267
+# define MAXFACS 7,292
+int period,12,361
+int period, facs[facs12,361
+int period, facs[MAXFACS], qchars[qchars12,361
+	main 14,408
+
+quadchar.c,68
+void disfactors 7,263
+void quadres 29,1320
+void quadchar 36,1573
+
+quadideal2.c,227
+# define FillYelow 7,318
+int bynorm,9,394
+int bynorm, natp[natp9,394
+# undef   CMIN11,434
+# define  CMIN 12,449
+# undef  ideal14,475
+# define ideal 15,490
+# undef  testx17,523
+# define testx 18,538
+void param(21,627
+
+quadideal3.c,288
+# define FillYelow 7,318
+# define FillGreen 8,393
+int bynorm,10,469
+int bynorm, shift,10,469
+int bynorm, shift, natp[natp10,469
+# undef   CMIN12,520
+# define  CMIN 13,535
+# undef  ideal15,561
+# define ideal 16,576
+# undef  testx18,608
+# define testx 19,623
+void param(22,763
+
+quadnum0.c,673
+# define MAXFACS 9,364
+# define MAXPERIOD 10,441
+# define SIZE 11,516
+# define AMAX 12,593
+# define BMAX 13,670
+# define QNORM(14,747
+int maxnorm,16,825
+int maxnorm, discriminant,16,825
+int maxnorm, discriminant, period,16,825
+int maxnorm, discriminant, period, coef2,16,825
+int maxnorm, discriminant, period, coef2, nfacs,16,825
+int maxnorm, discriminant, period, coef2, nfacs, facs[facs16,825
+	qchar[qchar17,890
+	qchar[MAXPERIOD], deltac[deltac17,890
+	qchar[MAXPERIOD], deltac[MAXPERIOD]; short int prinorm[prinorm17,890
+int radicand[radicand18,953
+void norma(21,1093
+void heading(28,1360
+void picture(35,1603
+void process(49,2086
+	main 58,2543
+
+quadnum1.c,673
+# define MAXFACS 9,364
+# define MAXPERIOD 10,440
+# define SIZE 11,515
+# define AMAX 12,591
+# define BMAX 13,667
+# define QNORM(14,741
+int maxnorm,16,820
+int maxnorm, discriminant,16,820
+int maxnorm, discriminant, period,16,820
+int maxnorm, discriminant, period, coef2,16,820
+int maxnorm, discriminant, period, coef2, nfacs,16,820
+int maxnorm, discriminant, period, coef2, nfacs, facs[facs16,820
+	qchar[qchar17,885
+	qchar[MAXPERIOD], deltac[deltac17,885
+	qchar[MAXPERIOD], deltac[MAXPERIOD]; short int prinorm[prinorm17,885
+int radicand[radicand18,948
+void norma(21,1102
+void heading(28,1368
+void picture(36,1659
+void process(50,2227
+	main 59,2683
+
+quadprim0mod4.c,310
+# define FONTSIZE 7,401
+# define SMAX 8,464
+# define CMIN 9,542
+# define AMAX 11,604
+# define BMAX 12,682
+# define DXY 13,760
+# define H 14,836
+# define QNORM(15,900
+# define peri 16,975
+# define ideal 18,1042
+# define testx 19,1112
+ int clas 25,1296
+void drawsquare(33,1561
+void picture(40,1833
+
+quadprim1mod4.c,351
+# define FONTSIZE 7,401
+# define SMAX 8,464
+# define CMIN 9,543
+# define AMAX 11,605
+# define BMAX 12,685
+# define DX 13,769
+# define DY 14,839
+# define H 15,905
+# define K 16,965
+# define QNORM(17,1034
+# define peri 18,1113
+# define ideal 20,1191
+# define testx 21,1261
+ int clas 27,1449
+void drawdiamond(35,1741
+void picture(43,2068
+
+quadprimes.c,807
+# define FillBlack 8,481
+# define FillBlue 9,557
+# define FillRed 10,634
+# define AddLineToPoint(11,709
+# define MAXFACS 13,776
+# define MAXPERIOD 14,854
+# define SIZE 15,930
+# define X00 17,1009
+# define Y00 18,1082
+# define Y01 19,1153
+# define Y11 20,1225
+CGContextRef c 22,1302
+CGContextRef c ; int yheight;22,1302
+int rad,23,1333
+int rad, maxnorm,23,1333
+int rad, maxnorm, discriminant,23,1333
+int rad, maxnorm, discriminant, period,23,1333
+int rad, maxnorm, discriminant, period, nfacs,23,1333
+int rad, maxnorm, discriminant, period, nfacs, facs[facs23,1333
+	qchar[qchar24,1396
+	qchar[MAXPERIOD], deltac[deltac24,1396
+	qchar[MAXPERIOD], deltac[MAXPERIOD]; short int prinorm[prinorm24,1396
+void norma(30,1572
+void heading(36,1834
+void process(51,2633
+void mainpic(60,3114
+
+quadsiev.c,304
+# define   WORD 4,157
+# define  INDEX(5,225
+# define    BIT(6,286
+# define  INSET(7,356
+# define    ADD(8,424
+# define REMOVE(9,487
+int pneven;11,552
+int capacity(13,624
+void makedelta(16,776
+int qnext(23,1071
+void addeven(28,1241
+int inset(31,1384
+void sieve(37,1627
+void sievquad(60,2900
+
+sievquad.c,261
+# define   WORD 3,79
+# define  INDEX(4,149
+# define    BIT(5,209
+# define  INSET(6,277
+# define    ADD(7,347
+# define REMOVE(8,412
+int capacity(10,479
+void makedelta(13,604
+int qnext(20,899
+int inset(25,1069
+void sieve(29,1224
+void sievquad(54,2553

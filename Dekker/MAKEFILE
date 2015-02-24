@@ -1,0 +1,11 @@
+all: chardlist quadnum0 quadnum1 quadprimes
+
+chardlist: chardlist.c quadchar.c
+	cl chardlist.c quadchar.c
+quadnum0: quadnum0.c quadchar.c sievquad.c
+	cl quadnum0.c quadchar.c sievquad.c
+quadnum1: quadnum1.c quadchar.c quadsiev.c
+	cl quadnum1.c quadchar.c quadsiev.c
+quadprimes: quadprimes.c quadchar.c quadsiev.c
+	cl quadprimes.c quadchar.c quadsiev.c
+

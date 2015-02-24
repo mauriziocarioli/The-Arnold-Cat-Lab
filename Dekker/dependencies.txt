@@ -1,0 +1,68 @@
+quadchar.c
+	defines |disfactors|
+		|quadres|
+		|quadchar|
+			calling
+				|quadres| defined in quadchar.c
+
+quadsiev.c
+	defines |capacity|
+		|makedelta|
+		|qnext|
+		|addeven|
+		|inset|
+		|sieve|
+			calling
+				|addeven| defined in quadsiev.c
+		|sievquad|
+			calling 
+				|makedelta| defined in quadsiev.c
+				|sieve| defined in quadsiev.c
+
+sievquad.c
+	defines |capacity|
+		|makedelta|
+		|qnext|
+		|inset|
+		|sieve|
+		|sievquad|
+			calling
+				|makedelta| defined in sievquad.c
+				|sieve| defined in sievquad.c
+
+quadideal2.c
+	defines |param|
+		calling CGContextSetCMYKFillColor defined in ?
+			CGContextShowText defined in ?
+
+quadideal3.c
+	defines |param|
+		calling CGContextSetCMYKFillColor defined in ?
+			CGContextShowText defined in ?
+
+quadnum0.c
+	defines |heading|
+
+chardlist.c
+	has |main|
+	    calling 
+	    	  |disfactors| defined in quadchar.c
+		  |quadchar| defined in quadchar.c
+
+quadnum0.c & quadnum1.c
+	defines |norma|
+			calling
+				|capacity| defined in sievquad.c
+		|heading|
+		|picture|
+		|process|
+			calling
+				|disfactors| defined in quadchar.c
+				|quadchar| defined in quadchar.c
+				|norma| defined in quadnum0.c
+				|sievquad| defined in sievquad.c
+				|heading| defined in quadnum0.c
+				|picture| defined in quadnum0.c
+		|main|
+			calling
+				|process| defined in quadnum0.c
