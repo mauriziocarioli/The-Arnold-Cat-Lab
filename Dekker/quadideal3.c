@@ -4,9 +4,6 @@
 /* and programming environment of Xcode system.                             */
 
 
-# define FillYelow CGContextSetCMYKFillColor(c, 0, .3, 1.0, 0, 1) // ideal
-# define FillGreen CGContextSetCMYKFillColor(c, .3, 0, 1.0, 0, 1) // coidl
-
 int bynorm, shift, natp[] = {2, 3, 5, 7, 11, 13};
 
 # undef   CMIN
@@ -17,14 +14,17 @@ int bynorm, shift, natp[] = {2, 3, 5, 7, 11, 13};
 
 # undef  testx
 # define testx  else if (norm % bynorm==0 && inset(norm/bynorm, prinorm)) \
-	if ((a - shift * b) % bynorm == 0) FillGreen; else FillYelow;
+    if ((a - shift * b) % bynorm == 0) IsCoIdeal; else IsIdeal;
 
 void param()  /*  calculates and draws bynorm (1st chi > 0) and shift  */
-{	int k; char q[50];
-	for (k = 0; qchar[natp[k]] <= 0; k++) ; bynorm = natp[k];
-	for (k = 0; QNORM(k, 1) % bynorm != 0 && k < 9; k++); shift = k;
-	sprintf(q, "bynorm %d  ", bynorm); FillYelow;
-	CGContextShowText(c, q, strlen(q));
-	sprintf(q, "shift %d  ", shift); FillGreen;
-	CGContextShowText(c, q, strlen(q));
+{	
+  int k; 
+  char q[50];
+  for (k = 0; qchar[natp[k]] <= 0; k++) 
+    ; 
+  bynorm = natp[k];
+  for (k = 0; QNORM(k, 1) % bynorm != 0 && k < 9; k++)
+    ; 
+  shift = k;
+  printf("\"bynorm\",%d,\"shift\",%d,\n\t\t", bynorm, shift); 
 }   /*  end param  */
