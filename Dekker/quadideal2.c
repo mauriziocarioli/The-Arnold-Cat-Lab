@@ -3,9 +3,6 @@
 /* The programs use subprograms from files quadchar.c and quadsiev.c        */
 /* and programming environment of Xcode system.                             */
 
-
-# define FillYelow CGContextSetCMYKFillColor(c, 0, .3, 1.0, 0, 1) // ideal
-
 int bynorm, natp[] = {2, 3, 5, 7, 11};
 
 # undef   CMIN
@@ -15,15 +12,17 @@ int bynorm, natp[] = {2, 3, 5, 7, 11};
 # define ideal       param();  
 
 # undef  testx
-# define testx  else if (norm % bynorm==0 && inset(norm/bynorm, prinorm)) \
-	FillYelow;
+# define testx  else if (norm % bynorm==0 && inset(norm/bynorm, prinorm)) IsIdeal;
 
 void param()  
 /*  calculates and draws bynorm == smallest prime p such that chi(p) >= 0  */
 /*  bynorm is norm of non-principal ideal correctly for radicand < 34      */
-{	int k; char q[50];
-	for (k = 0; qchar[natp[k]] < 0; k++) ; bynorm = natp[k];
-	sprintf(q, "bynorm %d  ", bynorm); FillYelow; 
-	CGContextShowText(c, q, strlen(q));	
+{	
+  int k; 
+  char q[50];
+  for (k = 0; qchar[natp[k]] < 0; k++) 
+    ; 
+  bynorm = natp[k];
+  printf("\"bynorm\",%d,\n\t\t", bynorm); 
 }   /*  end param  */
 
