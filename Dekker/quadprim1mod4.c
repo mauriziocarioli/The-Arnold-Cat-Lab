@@ -19,9 +19,9 @@
 Moreover, optional include to draw prime co-ideals.
 */
 
-int clas = 1, radicand[] = {-163,-67,-43,-19,-11,-7,-3,5,13,17,21,29,0};
-//int clas = 2, radicand[] = {-427,-403,-123,-115,-91,-51,-35,-15,65,85,0};
-//# include "quadideal2.c"
+//int clas = 1, radicand[] = {-163,-67,-43,-19,-11,-7,-3,5,13,17,21,29,0};
+int clas = 2, radicand[] = {-427,-403,-123,-115,-91,-51,-35,-15,65,85,0};
+# include "quadideal2.c"
 //int clas = 3, radicand[] = {-907,-211,-139,-107,-83,-59,-31,-23,229,257,0};
 //# include "quadideal3.c"
 
